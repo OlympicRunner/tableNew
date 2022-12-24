@@ -1,0 +1,47 @@
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* @font-face {
+    font-family: "Gilroy";
+    src: local("Gilroy-UltraLight"), url("../fonts/Gilroy-UltraLight.woff2") format("woff2");
+    src: local("Gilroy-UltraLight"), url("../fonts/Gilroy-UltraLight.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} */
+
+button {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-family: "Gilroy", sans-serif; 
+    /* еще укажим шрифт новій */
+    font-weight: 600;
+    color: black;
+    background-image: url(../image/background2.webp);
+    background-size: cover;
+    background-clip:border-box;
+}
+
+.container {
+    /* padding-top: 200px; */
+    margin-top: 200px;
+    width: 600px;
+    height: 300px;
+    background: gray;
+}
