@@ -251,3 +251,8 @@ body {
     background: rgb(71 228 253);
 }
 
+.error-entry {
+    font-size: 22px;
+    padding: 5px 44px;
+    color: red;
+}

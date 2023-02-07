@@ -20,6 +20,12 @@ let doingStructure = {
                     input.setAttribute('type', type)
                     input.setAttribute('placeholder', plac)
                     windowForEdd.append(input)
+
+                    let error = document.createElement('span')
+                    error.classList.add('error-' + info)
+                    error.classList.add('error-entry')
+                    error.textContent = 'Поле не заполнено'
+                    windowForEdd.append(error)
                 }
 
                 const addTitle = document.createElement('h2')
@@ -50,24 +56,44 @@ let doingStructure = {
                     console.log('+')
                 })
 
-                function checkAdded (text = 'names') {
-                    let item = document.querySelector('input-' + text)
+                function checkAdded (text = 'names') { /// визуальная часть проверки на наличие пустых строк
+                    let item = document.querySelector('.input-' + text)
+                    let checkError = document.querySelector('.error-' + text)
 
-                    console.log(item)
-                    
-                    if (item.value.length == 0) {
-                        let error = document.createElement('span')
-                        classList.add('error-' + text)
-                        windowForEdd.append(error)
+                    if (item.value == '' && checkError !== null) {
+                        let error = document.querySelector('.error-' + text)
+                        error.textContent = 'Данные из поля выше введены не верно или отсуцтвуют'
                     }
 
+                    if (item.value !== '') {
+                        checkError.textContent = ''
+                    }
+                }
 
+                function checkForSave () {   /// продолжаем тут
+                    let inputs = document.querySelectorAll('.input')
+                    let index = 0
+                    inputs.forEach(function(item) {
+                        if (!item.value == '') {
+                            index++
+                        }
+                    })
+                    
+                    if (index == 6) {
+
+                    }
                 }
 
                 windowForEdd.addEventListener('submit', e => {
                     e.preventDefault()
                     checkAdded ('names')
-                    
+                    checkAdded ('surname')
+                    checkAdded ('lastname')
+                    checkAdded ('faculty')
+                    checkAdded ('birthday')
+                    checkAdded ('study')
+
+                    checkAndSave () /// функиця сохраняет в локал и закрывает форму  <= сюда вставим функцию из другого js где будет синхрон в локал стор
                 })
             }
        
