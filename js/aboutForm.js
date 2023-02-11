@@ -1,3 +1,6 @@
+import { saveToLocal } from "./saveToLockal.js"
+import { addItem } from "./createEmelemtTable.js"
+
 let doingStructure = {
 
     btnsStructure : function () {
@@ -70,7 +73,7 @@ let doingStructure = {
                     }
                 }
 
-                function checkForSave () {   /// продолжаем тут
+                function checkForAdd () {   /// продолжаем тут
                     let inputs = document.querySelectorAll('.input')
                     let index = 0
                     inputs.forEach(function(item) {
@@ -79,8 +82,15 @@ let doingStructure = {
                         }
                     })
                     
-                    if (index == 6) {
-
+                    if (index < 6) {
+                        let obj = []
+                        inputs.forEach(function(item){
+                            obj.push(item.value)
+                        })
+                        // создаем уникальное id, просто сложим из данных 
+                        // let uniqe = String(obj[0] + obj[1] + obj[3] + obj[4]) и еще перемешаем
+                        console.log(uniqe)
+                        // addItem (данные)
                     }
                 }
 
@@ -93,7 +103,8 @@ let doingStructure = {
                     checkAdded ('birthday')
                     checkAdded ('study')
 
-                    checkAndSave () /// функиця сохраняет в локал и закрывает форму  <= сюда вставим функцию из другого js где будет синхрон в локал стор
+                    checkForAdd ()
+                    // checkForAdd /// добавляет строку с данными в таблицу
                 })
             }
        
