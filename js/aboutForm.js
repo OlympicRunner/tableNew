@@ -43,6 +43,16 @@ let doingStructure = {
                 input ('birthday', 'date', 'Введите дату рождения')
                 input ('study', 'date')
 
+                function inputDateMin (classs, minDate) {
+                    let item = document.querySelector(classs)
+                    item.setAttribute('min', minDate)
+                    item.setAttribute('max', (new Date()).toISOString().slice(0,10))
+                }
+
+                inputDateMin ('.input-birthday', '1990-01-01')
+                inputDateMin ('.input-study', '2000-01-01')
+
+
                 const btnAddStudent = document.createElement('button')
                 btnAddStudent.classList.add('btn-addStudent')
                 btnAddStudent.textContent = 'Добавить студента'
@@ -83,13 +93,16 @@ let doingStructure = {
                     })
                     
                     if (index < 6) {
-                        let obj = []
-                        inputs.forEach(function(item){
-                            obj.push(item.value)
-                        })
-                        // создаем уникальное id, просто сложим из данных 
-                        // let uniqe = String(obj[0] + obj[1] + obj[3] + obj[4]) и еще перемешаем
-                        console.log(uniqe)
+                        let obj = {}
+                        obj.names = inputs[0].value
+                        obj.surname = inputs[1].value
+                        obj.lastname = inputs[2].value
+                        obj.faculty = inputs[3].value
+                        obj.birthday = new Date(inputs[4].value)
+                        obj.study = inputs[5].value.split('-')[0]
+                        console.log(obj)
+                        
+                        addItem (obj)
                         // addItem (данные)
                     }
                 }
