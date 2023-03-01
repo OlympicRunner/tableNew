@@ -45,7 +45,7 @@ body {
     position: relative;
     display: grid;
     grid-template-columns: 100px 1fr;
-    grid-template-rows: 200px 100px auto;
+    grid-template-rows: 200px auto auto;
     margin-top: 200px;
     width: 1400px;
     border: 2px solid rgb(71 228 253);
@@ -107,6 +107,7 @@ body {
 
 .numbers {
     grid-column-start: 1;
+    min-height: 60px;
 }
 
 .table-body {
@@ -217,7 +218,7 @@ body {
 }
 
 .input-study::after {
-    content: 'Введите сюда года обучения';
+    content: 'Введите сюда год начала обучения';
     position: absolute;
     left: 260px;
     width: 550px;
@@ -255,4 +256,19 @@ body {
     font-size: 22px;
     padding: 5px 44px;
     color: red;
+}
+
+.students-li {
+    display: grid;
+    margin: 0 10px 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    border: 1px solid black;
+}
+
+.lis {
+    height: 50px;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
 }

@@ -43,6 +43,16 @@ let doingStructure = {
                 input ('birthday', 'date', 'Введите дату рождения')
                 input ('study', 'date')
 
+                function inputDateMin (classs, minDate) {
+                    let item = document.querySelector(classs)
+                    item.setAttribute('min', minDate)
+                    item.setAttribute('max', (new Date()).toISOString().slice(0,10))
+                }
+
+                inputDateMin ('.input-birthday', '1990-01-01')
+                inputDateMin ('.input-study', '2000-01-01')
+
+
                 const btnAddStudent = document.createElement('button')
                 btnAddStudent.classList.add('btn-addStudent')
                 btnAddStudent.textContent = 'Добавить студента'
@@ -88,8 +98,11 @@ let doingStructure = {
                         obj.surname = inputs[1].value
                         obj.lastname = inputs[2].value
                         obj.faculty = inputs[3].value
-                        obj.birthday = inputs[4].value
+                        obj.birthday = new Date(inputs[4].value)
+                        obj.study = inputs[5].value.split('-')[0]
                         console.log(obj)
+                        
+                        addItem (obj)
                         // addItem (данные)
                     }
                 }

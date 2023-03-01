@@ -51,8 +51,8 @@ let startCraft =  {
         filterElement('birthday')
         sortElement('names', 'Инициалам')
         sortElement('faculty', 'Факультету')
-        sortElement('date', 'Дате')
-        sortElement('birthday', 'дате рождения')
+        sortElement('date', 'дате рождения')
+        sortElement('birthday', 'дате обучения')
 
     }
 
