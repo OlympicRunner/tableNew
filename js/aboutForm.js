@@ -1,5 +1,6 @@
 import { saveToLocal } from "./saveToLockal.js"
 import { addItem } from "./createEmelemtTable.js"
+import {newId} from './generateId.js'
 
 let doingStructure = {
 
@@ -100,9 +101,11 @@ let doingStructure = {
                         obj.faculty = inputs[3].value
                         obj.birthday = new Date(inputs[4].value)
                         obj.study = inputs[5].value.split('-')[0]
+                        obj.id = newId ()
                         console.log(obj)
                         
                         addItem (obj)
+                        
                         // addItem (данные)
                     }
                 }
@@ -120,7 +123,7 @@ let doingStructure = {
                     // checkForAdd /// добавляет строку с данными в таблицу
                 })
             }
-       
+        
             btnAdd.addEventListener('click', () => {
                 windowAdd()
 

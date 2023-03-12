@@ -3,7 +3,7 @@ import {workBtn} from './aboutForm.js'
 
 (() => {
 
-    let infoList = []
+    let data = []
     
     createStructure ()
     workBtn ()

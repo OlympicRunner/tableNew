@@ -1,3 +1,4 @@
+
 let createElements = {
 
     addelements : function (obj) {
@@ -15,6 +16,10 @@ let createElements = {
         lis ()
         lis ()
         lis ()
+
+        let id = document.createElement('i')
+        id.setAttribute('alt', obj.id)
+        li.append(id)
 
         let today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()); //Текущя дата без времени
         let dob = obj.birthday; //Дата рождения
